@@ -1,21 +1,32 @@
+package Models;
+
+import java.util.UUID;
+
 public class Candidate {
     private String id;
     private String familyName;
     private String lastName;
-    private String dob;
+    private int yob;
     private String address;
     private String phoneNumber;
     private String email;
     private String type;
 
-    public Candidate(String id, String familyName, String lastName, String dob, String address, String phoneNumber, String email, String type) {
-        this.id = id;
+    public Candidate(String familyName, String lastName, int yob, String address, String phoneNumber, String email, String type) {
+        this.id = String.valueOf(UUID.randomUUID());
         this.familyName = familyName;
         this.lastName = lastName;
-        this.dob = dob;
+        this.yob = yob;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
+    }
+
+    public Candidate() {
+        
+    }
+
+    public Candidate(int yob, String phoneNumber, String email) {
     }
 
     public String getId() {
@@ -42,12 +53,12 @@ public class Candidate {
         this.lastName = lastName;
     }
 
-    public String getDob() {
-        return dob;
+    public int getYob() {
+        return yob;
     }
 
-    public void setDob(String dob) {
-        this.dob = dob;
+    public void setYob(int yob) {
+        this.yob = yob;
     }
 
     public String getAddress() {
